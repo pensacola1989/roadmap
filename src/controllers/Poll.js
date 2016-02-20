@@ -18,10 +18,10 @@ export class Poll {
 		var notifyKey = req.query.notify_key;
 		var targetRes = resHashMap.has(notifyKey) ? resHashMap.get(notifyKey) : undefined;
 		if (targetRes != undefined && targetRes.writable) {
-			targetRes.write({ scaned: 1 });
+			targetRes.json({ scaned: 1 });
 			targetRes.end();
 			resHashMap.delete(targetRes);
 		}
-		return ;
+		return res.end();
 	}
 }
