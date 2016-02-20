@@ -11,9 +11,14 @@ module.exports = {
 
     },
     routes: {
-        'GET /': 'Test#action'
+        'GET /': 'Test#action',
+        'GET /long_polling': 'Poll#index',
+        'GET /notify': 'Poll#notify'
     },
     controllers: {
+        Poll: {
+
+        },
         Test: {
             services: {
                 TestService: 'TestService',

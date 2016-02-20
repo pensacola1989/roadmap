@@ -6,16 +6,12 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import * as loader from './loader';
 // import {Test as TestController} from './controllers/Test';
-
+/**
+* babel build command for server env
+*/
+// ./node_modules/.bin/babel src --out-dir dist
 
 var app = express();
-
-// app.use('/', (req, res, next) => {
-//   let t = new TestController(null, {});
-//   var arr = [];
-//   arr.push(t);
-//   arr[0].action();
-// });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -47,10 +43,6 @@ if (app.get('env') === 'development') {
     res.status(err.status || 500);
     res.json(err);
     res.end();
-    // res.render('error', {
-    //   message: err.message,
-    //   error: err
-    // });
   });
 }
 
