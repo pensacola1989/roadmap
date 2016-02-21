@@ -26,8 +26,7 @@ export class Poll {
 		if (targetRes != undefined && targetRes.resp.writable) {
 			var ret = JSON.stringify({ scaned: 1 });
 			targetRes.resp.write(`${targetRes.jsonp}(${ret})`);
-			// targetRes.json({ scaned: 1 });
-			targetRes.end();
+			targetRes.resp.end();
 			resHashMap.delete(notifyKey);
 		}
 		return res.end();
