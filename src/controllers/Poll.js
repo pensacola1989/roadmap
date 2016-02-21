@@ -9,18 +9,26 @@ export class Poll {
 	}
 
 	index (req, res, next) {
-		var key = req.query.key;
-		resHashMap.set(key, res);
+		let key = req.query.key;
+		let jsonpCb = req.query.callback;
+
+		resHashMap.set(key, {
+			resp: res,
+			jsonp: jsonpCb
+		})
+		// resHashMap.set(key, res);
 		return;
 	};
 
 	notify (req, res, next) {
-		var notifyKey = req.query.notify_key;
-		var targetRes = resHashMap.has(notifyKey) ? resHashMap.get(notifyKey) : undefined;
-		if (targetRes != undefined && targetRes.writable) {
-			targetRes.json({ scaned: 1 });
+		let notifyKey = req.query.notify_key;
+		let targetRes = resHashMap.has(notifyKey) ? resHashMap.get(notifyKey) : undefined;
+		if (targetRes != undefined && targetRes.resp.writable) {
+			var ret = JSON.stringify({ scaned: 1 });
+			targetRes.resp.write(`${targetRes.jsonp}(${ret})`);
+			// targetRes.json({ scaned: 1 });
 			targetRes.end();
-			resHashMap.delete(targetRes);
+			resHashMap.delete(notifyKey);
 		}
 		return res.end();
 	}
