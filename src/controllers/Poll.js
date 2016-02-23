@@ -24,9 +24,11 @@ export class Poll {
 		let token = req.query.token;
 		let uid = req.query.uid;
 		let notifyKey = req.query.notify_key;
+		let name = req.query.name;
+		
 		let targetRes = resHashMap.has(notifyKey) ? resHashMap.get(notifyKey) : undefined;
 		if (targetRes != undefined && targetRes.resp.writable) {
-			var ret = JSON.stringify({ scaned: 1, uid: uid, token: token });
+			var ret = JSON.stringify({ scaned: 1, uid: uid, token: token, name: name });
 			targetRes.resp.write(`${targetRes.jsonp}(${ret})`);
 			targetRes.resp.end();
 			resHashMap.delete(notifyKey);
