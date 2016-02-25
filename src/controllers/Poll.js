@@ -11,20 +11,20 @@ export class Poll {
 	index (req, res, next) {
 		let key = req.query.key;
 		let jsonpCb = req.query.callback;
-
+		key = key.indexOf('$$') > -1 && key.splite('$$').shift();
 		resHashMap.set(key, {
 			resp: res,
 			jsonp: jsonpCb
 		})
 		// resHashMap.set(key, res);
 		return;
-	};
+	}
 
 	notify (req, res, next) {
-		let token = req.query.token;
-		let uid = req.query.uid;
+		let token = req.query.token || '';
+		let uid = req.query.uid || '';
 		let notifyKey = req.query.notify_key;
-		let name = req.query.name;
+		let name = req.query.name || '';
 
 		let targetRes = resHashMap.has(notifyKey) ? resHashMap.get(notifyKey) : undefined;
 		if (targetRes != undefined && targetRes.resp.writable) {
