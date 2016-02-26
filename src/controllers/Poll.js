@@ -11,8 +11,10 @@ export class Poll {
 	index (req, res, next) {
 		let key = req.query.key;
 		let jsonpCb = req.query.callback;
-		console.log(key);
-		key = key.indexOf('$$') > -1 && key.split('$$').shift();
+		if (key.indexOf('$$') > -1) {
+			key =  && key.split('$$').shift();
+			console.log(key);
+		}
 		resHashMap.set(key, {
 			resp: res,
 			jsonp: jsonpCb
