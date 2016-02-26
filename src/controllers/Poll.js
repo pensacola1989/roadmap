@@ -12,7 +12,7 @@ export class Poll {
 		let key = req.query.key;
 		let jsonpCb = req.query.callback;
 		if (key.indexOf('$$') > -1) {
-			key =  && key.split('$$').shift();
+			key = key.split('$$').shift();
 			console.log(key);
 		}
 		resHashMap.set(key, {
