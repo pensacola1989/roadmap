@@ -28,7 +28,9 @@ export class Poll {
 		let uid = req.query.uid || '';
 		let notifyKey = req.query.notify_key;
 		let name = req.query.name || '';
-
+		if (notifyKey.indexOf('$$') > -1) {
+			notifyKey = notifyKey.split('$$').shift();
+		}
 		let targetRes = resHashMap.has(notifyKey) ? resHashMap.get(notifyKey) : undefined;
 		if (targetRes != undefined && targetRes.resp.writable) {
 			var ret = JSON.stringify({ scaned: 1, uid: uid, token: token, name: name });
