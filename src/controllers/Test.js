@@ -8,7 +8,42 @@ export class Test {
 	}
 
 	action (req, res, next) {
-		res.write(this.testService.foo());
-		res.end();
+		this.testService
+			.foo()
+			.then((user) => {
+				res.json(user);
+				res.end();
+			})
+		// res.write(this.testService.foo());
+		// res.end();
 	};
+
+	saveUser (req, res, next) {
+		var user = {
+			userName: 'www',
+			mobile: '15989898989',
+			company: 'MS',
+			duty: 'CEO',
+			openid: 'sdfsdf23423_'
+		}
+		this.testService
+			.saveUser(user)
+			.then((ret) => {
+				res.json(ret);
+				res.end();
+			})
+			.catch((err) => {
+				res.json(err);
+				res.end();
+				// next(err);
+			})
+			.finally((err) => {
+				console.log('...save user finished...');
+			});
+	};
+
+	getOpenId (req, res, next) {
+		let openId = req.params.openid;
+		console.log(openId);
+	}
 }

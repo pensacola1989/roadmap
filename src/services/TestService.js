@@ -1,3 +1,4 @@
+import User from '../models/user.js'
 
 export class TestService {
 
@@ -5,7 +6,19 @@ export class TestService {
 		this.options = options;
 	}
 
+	getAllUsers() {
+		return User.fetchAll();
+	}
+	/**
+	* save a user
+	* @param user user object
+	*/
+	saveUser(user) {
+		return new User(user).save();
+	}
+
 	foo() {
-		return 'foo from services';
+		return User.fetchAll();
+		// return 'foo from services';
 	}
 }

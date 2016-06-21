@@ -4,18 +4,26 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "build": "babel src  --watch --out-dir dist"
+    "build": "babel src  --watch --out-dir dist",
+    "init": "knex init",
+    "migrate:make": "knex migrate:make",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "seed:make": "knex seed:make",
+    "seed:run": "knex seed:run"
   },
   "dependencies": {
     "babel-runtime": "^6.3.19",
     "body-parser": "~1.13.2",
     "bookshelf": "^0.9.1",
+    "checkit": "^0.7.0",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "knex": "^0.9.0",
     "morgan": "~1.6.1",
+    "mysql": "^2.11.1",
     "serve-favicon": "~2.3.0",
     "systemjs": "^0.19.20",
     "underscore": "^1.8.3"
