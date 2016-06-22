@@ -11,8 +11,8 @@ module.exports = {
 
     },
     routes: {
-        'GET /': 'Test#index',
-        'POST /user': 'Test#saveUser',
+        'GET /:openid': 'Test#index',
+        'POST /user/:openid': 'Test#saveUser',
         'GET /user/:openid': 'Test#getOpenId',
         'GET /long_polling': 'Poll#index',
         'GET /notify': 'Poll#notify'

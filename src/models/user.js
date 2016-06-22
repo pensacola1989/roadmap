@@ -15,7 +15,8 @@ let UserModel = bookshelf.Model.extend({
   			rule: 'required',
   			message: '请输入手机号'
   		}, {
-  			rule: 'exactLength:11',
+  			rule: 'required',
+  			// rule: 'exactLength:11',
   			message: '请输入合法的手机号'
   		}
   		, {
