@@ -17,6 +17,9 @@ export class TestService {
 		return new User(user).save();
 	}
 
+	getUserByOpenId (openId) {
+		return User.where('openid', '=', openId).fetch();
+	}
 	foo() {
 		return User.fetchAll();
 		// return 'foo from services';

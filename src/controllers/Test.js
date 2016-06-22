@@ -17,7 +17,9 @@ export class Test {
 		// res.write(this.testService.foo());
 		// res.end();
 	};
-
+	index (req, res, next) {
+		return res.render('index');
+	};
 	saveUser (req, res, next) {
 		var user = {
 			userName: 'www',
@@ -35,7 +37,7 @@ export class Test {
 			.catch((err) => {
 				res.json(err);
 				res.end();
-				// next(err);
+				// next(err);			
 			})
 			.finally((err) => {
 				console.log('...save user finished...');
@@ -44,6 +46,18 @@ export class Test {
 
 	getOpenId (req, res, next) {
 		let openId = req.params.openid;
-		console.log(openId);
+		this.testService
+			.getUserByOpenId(openId)
+			.then((user) => {
+				res.json(user);
+				res.end();
+			})
+			.catch((err) => {
+				console.error(err);
+				next(err);
+			})
+			.finally(() => {
+				console.log('...get user by openId finished....');
+			})
 	}
 }

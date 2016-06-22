@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "build": "babel src  --watch --out-dir dist",
+    "build": "babel src  --watch --out-dir dist --copy-files --ignore public",
     "init": "knex init",
     "migrate:make": "knex migrate:make",
     "migrate:latest": "knex migrate:latest",
