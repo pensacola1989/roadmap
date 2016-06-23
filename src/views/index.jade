@@ -197,10 +197,11 @@ html(lang='zh-CN')
             newUser[$($inputs[i]).attr('name')] = $($inputs[i]).val();
           }
 
-          $.post('/user/!{openId}', newUser, function (res) {
+          //- $.post('/user/!{openId}', newUser, function (res) {
+          $.post('/user', newUser, function (res) {
             if (res) {
               alert('报名成功!');
-              location.href = location.href;
+              location.href = '/';
             }
           })
           e.preventDefault();
