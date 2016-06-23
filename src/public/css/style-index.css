@@ -607,6 +607,7 @@ h4 {
 	left: 0;
 	top: 0;
 	background-color:#fff;
+	width: 100%;
 	transition: all 1s cubic-bezier(.12,.73,.62,1.38);
 }
 
