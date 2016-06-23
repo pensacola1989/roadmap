@@ -26,7 +26,7 @@ export class Test {
 	index (req, res, next) {
 		let code = req.query.code;
 		let client = new OAuth('wx236de42b1edcd623', '8d6c2cd8e8c3db33bc51541e1f31e09d');
-		let url = client.getAuthorizeURL('http://www.wechat-test.com/', '1', 'snsapi_userinfo');
+		let url = client.getAuthorizeURL('http://www.wechat-test.com/', '1', 'snsapi_base');
 				// sdfsdf23423_
 		if (code && code !== '') { // has redirected
 			// get openId;
@@ -48,8 +48,9 @@ export class Test {
 			})
 		}
 		else {
-			res.write('参数错误');
-			res.end();
+			return res.redirect(url);
+			// res.write('参数错误');
+			// res.end();
 		}
 		// let openId = req.params.openid || 'sdfsdf23423_';
 		// this.testService
