@@ -1,0 +1,60 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(charset='UTF-8')
+    title ASSA ABLOY Entrance Systems
+    meta(name='viewport', content='initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='keywords', content='')
+    meta(name='description', content='')
+    meta(name='author', content='Rain Wu')
+    meta(name='apple-mobile-web-app-capable', content='no')
+    meta(name='format-detection', content='telephone=no')
+    link(rel='stylesheet', type='text/css', href='//cdn.bootcss.com/FrozenUI/1.3.0/css/full.css')
+  body
+    .ui-form.ui-border-t
+      form(action='#')       
+        .ui-form-item.ui-form-item-l.ui-border-b
+          label.ui-border-r
+            | 手机号
+          |             
+          input(type='text', id="mobile", placeholder='请输入手机号码')
+          |             
+          a.ui-icon-close(href='#')
+        .ui-form-itme.ui-border-b
+          .ui-btn-wrap
+            button.ui-btn-lg.ui-btn-primary#search
+              | 搜索
+          .ui-btn-wrap
+            a.ui-btn-lg#seeall(href="/all")
+              | 查看所有
+    .ui-dialog
+      .ui-dialog-cnt
+          header.ui-dialog-hd.ui-border-b
+            h3 搜索结果
+            |                   
+            i.ui-dialog-close(data-role='button')
+          |         
+          .ui-dialog-bd
+            h4#ret
+          |         
+          .ui-dialog-ft
+            button(type='button', data-role='button') 确认
+    script(src="js/FrozenUI_files/zepto.min.js")
+    script(src="//cdn.bootcss.com/FrozenUI/1.3.0/js/frozen.js")
+    //- script(src="js/FrozenUI_files/effect.parallax.js")
+
+    script.
+      !function ($) { 
+        $('#search').on('click', function () {
+          var mobile = $('#mobile').val();
+          $.get('/search/?mobile=' + mobile, function (user) {
+              var msg = user ? '用户已经报名' : '用户未报名';
+              $('#ret').html(msg);
+              $(".ui-dialog").dialog("show");
+          });
+        });
+        $('.ui-dialog-ft, .ui-dialog-close').on('click', function () {
+          $('.ui-dialog').dialog('hide');
+        });
+      } (Zepto);
+      

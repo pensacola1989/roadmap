@@ -1,0 +1,28 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(charset='UTF-8')
+    title ASSA ABLOY Entrance Systems
+    meta(name='viewport', content='initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='keywords', content='')
+    meta(name='description', content='')
+    meta(name='author', content='Rain Wu')
+    meta(name='apple-mobile-web-app-capable', content='no')
+    meta(name='format-detection', content='telephone=no')
+    link(rel='stylesheet', type='text/css', href='//cdn.bootcss.com/FrozenUI/1.3.0/css/full.css')
+  body
+    table.ui-table.ui-border-tb
+      thead
+          tr
+            th 姓名
+            th 手机号
+            th 公司
+            th 职务
+      |     
+      tbody
+        each user in users
+          tr
+            td= user.userName
+            td= user.mobile
+            td= user.company
+            td= user.duty

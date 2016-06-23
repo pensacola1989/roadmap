@@ -11,13 +11,13 @@ let UserModel = bookshelf.Model.extend({
   			rule: 'required',
   			message: '请输入用户名'
   		},
+  		email: {
+  			rule: 'required',
+  			message: '请输入Email地址'
+  		},
   		mobile: [{
   			rule: 'required',
   			message: '请输入手机号'
-  		}, {
-  			rule: 'required',
-  			// rule: 'exactLength:11',
-  			message: '请输入合法的手机号'
   		}
   		, {
   			rule: function (val, params, context) {
@@ -38,7 +38,8 @@ let UserModel = bookshelf.Model.extend({
   		duty: {
   			rule: 'required',
   			message: '请输入职务名称',
-  		},
+  		}
+  		,
   		openid: {
   			rule: 'required',
   			message: '缺少参数'

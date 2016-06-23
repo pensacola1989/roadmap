@@ -20,6 +20,9 @@ export class TestService {
 	getUserByOpenId (openId) {
 		return User.where('openid', '=', openId).fetch();
 	}
+	getUserByMobile (mobile) {
+		return User.where('mobile', '=', mobile).fetch();
+	}
 	foo() {
 		return User.fetchAll();
 		// return 'foo from services';
