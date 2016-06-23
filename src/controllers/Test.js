@@ -68,7 +68,13 @@ export class Test {
 			})
 	};
 	index (req, res, next) {
-		return res.render('index');
+		if (req.query.d === '1') {
+			return res.render('index', { user: true });	
+		}
+		else {
+			return res.render('index');
+		}
+		
 		// let code = req.query.code;
 		// let client = new OAuth('wx236de42b1edcd623', '8d6c2cd8e8c3db33bc51541e1f31e09d');
 		// let url = client.getAuthorizeURL('http://www.wechat-test.com/', '1', 'snsapi_base');

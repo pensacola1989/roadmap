@@ -215,7 +215,7 @@ html(lang='zh-CN')
           $.post('/user', newUser, function (res) {
             if (res) {
               alert('报名成功!');
-              location.href = '/';
+              location.href = '/?d=1';
             }
           })
           e.preventDefault();

@@ -7,7 +7,8 @@ module.exports = {
     connection: {
       database: 'roadmap',
       user:     'root',
-      password: ''
+      password: '',
+      charset: 'utf8'
     },
     useNullAsDefault: true,
     migrations: {
