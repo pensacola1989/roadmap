@@ -20,24 +20,49 @@ export class Test {
 	code (req, res, next) {
 		res.write(req.query.code);
 		res.end();
+		// res.write(req.query.code);
+		// res.end();
 	};
 	index (req, res, next) {
+		let code = req.query.code;
 		let client = new OAuth('wx236de42b1edcd623', '8d6c2cd8e8c3db33bc51541e1f31e09d');
-		let url = client.getAuthorizeURL('http://localhost/code', '1', 'snsapi_userinfo');
-		console.log(url);
+		let url = client.getAuthorizeURL('http://www.wechat-test.com/', '1', 'snsapi_userinfo');
 				// sdfsdf23423_
-		let openId = req.params.openid || 'sdfsdf23423_';
-		this.testService
-			.getUserByOpenId(openId)
-			.then((user) => {
-				return res.render('index', { user: user, openId: openId });
+		if (code && code !== '') { // has redirected
+			// get openId;
+			client.getAccessToken(code, (err, ret) => {
+				let accessToken = ret.data.access_token;
+				let openId = ret.data.openid || 'sdfsdf23423_';
+				console.log(ret)
+				this.testService
+					.getUserByOpenId(openId)
+					.then((user) => {
+						return res.render('index', { user: user, openId: openId });
+					})
+					.catch((err) => {
+						next(err.message);
+					})
+					.finally(() => {
+						console.log('user query finished');
+					});
 			})
-			.catch((err) => {
-				next(err.message);
-			})
-			.finally(() => {
-				console.log('user query finished');
-			})
+		}
+		else {
+			res.write('参数错误');
+			res.end();
+		}
+		// let openId = req.params.openid || 'sdfsdf23423_';
+		// this.testService
+		// 	.getUserByOpenId(openId)
+		// 	.then((user) => {
+		// 		return res.render('index', { user: user, openId: openId });
+		// 	})
+		// 	.catch((err) => {
+		// 		next(err.message);
+		// 	})
+		// 	.finally(() => {
+		// 		console.log('user query finished');
+		// 	})
 		// return res.render('index');
 	};
 	saveUser (req, res, next) {

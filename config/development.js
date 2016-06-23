@@ -11,11 +11,11 @@ module.exports = {
 
     },
     routes: {
-        'GET /:openid': 'Test#index',
+        'GET /code': 'Test#code',
+        'GET /': 'Test#index',
         'POST /user/:openid': 'Test#saveUser',
         'GET /user/:openid': 'Test#getOpenId',
         'GET /long_polling': 'Poll#index',
-        'GET /code': 'Test#code',
         'GET /notify': 'Poll#notify'
     },
     controllers: {
