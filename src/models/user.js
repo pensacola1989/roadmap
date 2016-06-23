@@ -4,7 +4,7 @@ import Checkit from 'checkit';
 
 let UserModel = bookshelf.Model.extend({
 	// idAttribute: 'id',
-	tableName: 'users',
+	tableName: 'Users',
   	hasTimestamps: true,
   	validateRules: {
   		userName: {
@@ -21,7 +21,7 @@ let UserModel = bookshelf.Model.extend({
   		}
   		, {
   			rule: function (val, params, context) {
-  				return knex('users')
+  				return knex('Users')
   							.where('mobile', '=', val)
   							.then(function (resp) {
   								if (resp.length > 0) {

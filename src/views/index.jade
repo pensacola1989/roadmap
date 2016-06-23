@@ -51,11 +51,9 @@ html(lang='zh-CN')
           section.page2.content.page.pad15(data-id="2")
             header ASSA ABLOY Entrance Systems
             p
-              | 亚萨合莱自动门系统 & 
+              | 亚萨合莱自动门系统来自亚萨合莱集团 
               br
-              | 亚萨合莱集团旗下独立事业部 
-              br
-              | 旗下拥有；
+              | 旗下拥有产品品牌:
               br
               span Besam | Crawford | Albany | Megadoor
             .image-wrap
@@ -217,7 +215,7 @@ html(lang='zh-CN')
           $.post('/user', newUser, function (res) {
             if (res) {
               alert('报名成功!');
-              location.href = '/';
+              location.href = '/?d=1';
             }
           })
           e.preventDefault();
