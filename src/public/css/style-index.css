@@ -605,12 +605,13 @@ h4 {
 	left: 0;
 	top: 0;
 	background-color:#fff;
+	transition: all 1s cubic-bezier(.12,.73,.62,1.38);
 }
 
 .map-wrap img.act{
 	position:relative!important;
-	transition-delay: 2.4s;
-	transition: all 1s cubic-bezier(.12,.73,.62,1.38);
+	
+	//transition: all 1s cubic-bezier(.12,.73,.62,1.38);
 	
 	transform-origin: bottom right;
 }
@@ -726,4 +727,12 @@ h4 {
 .bounceIn{
   animation-name: bounceIn!important;
   -webkit-animation-name: bounceIn!important;
+}
+
+.parallax-loading{
+	background-color:#278ab9!important;
+	background-image: url(../img/loanding.gif);
+	background-position:center;
+	background-repeat: no-repeat;
+	background-size:contain;
 }
