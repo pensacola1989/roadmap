@@ -12,149 +12,170 @@ html(lang='zh-CN')
     link(rel='stylesheet', type='text/css', href='css/style-index.css')
     link(rel='stylesheet', type='text/css', href='js/FrozenUI_files/parallax.css')
     link(rel='stylesheet', type='text/css', href='js/FrozenUI_files/parallax-animation.css')
+    style.
+      .mask{
+        position: absolute;
+        z-index: 9999;
+        width:100%;
+        height:100vh;
+        background-color: #278AB9;  
+      }
+      .icon-loading{
+        background-image: url(../img/loanding.gif);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 70%;
+        min-height: 100px;
+        margin: 70% auto 0;
+      }
   body
+    //- .mask
+    //-   .icon-loading
     .wrapper
       .pages.vertical.default
-        section.page1.content.current.page(data-id="1")
-          .bg
-            header On the road to the future
-            p CHINA TRUCK TOUR 2016
-            .icon-open.bounceIn
-              a(href='')
-                | 开启未来 
-          .cover-wrap
-            p ASSA ABLOY Entrance Systems
-            h4 邀请函
-            p 2016 全国卡车巡展
-            hr
-            p 广东 潮汕 2016/6/24
-        section.page2.content.page.pad15(data-id="2")
-          header ASSA ABLOY Entrance Systems
-          p
-            | 亚萨合莱自动门系统 & 
-            br
-            | 亚萨合莱集团旗下独立事业部 
-            br
-            | 旗下拥有；
-            br
-            span Besam | Crawford | Albany | Megadoor
-          .image-wrap
-            figure.img-1(data-animation="fadeIn" data-delay="0")
-            figure.img-2(data-animation="fadeIn" data-delay="100")
-            figure.img-3(data-animation="fadeIn" data-delay="200")
-            figure.img-4(data-animation="fadeIn" data-delay="300")
-            figure.img-5(data-animation="fadeIn" data-delay="400")
-            figure.img-6(data-animation="fadeIn" data-delay="500")
-            figure.img-7(data-animation="fadeIn" data-delay="600")
-          p
-            | 我们致力于满足您对通行口的各类需求
-            br
-            | 我们在中国9个城市设有办事处
-            br
-            | 安装及服务团队覆盖全国
-          .banner-wrap
-            img(src='img/banner2.png', alt='banner', data-animation="fadeInToRight" data-delay="700")
-          .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") ASSA ABLOY Entrance Systems
-        section.page3.content.page.pad15(data-id="3")
-          header ASSA ABLOY Entrance Systems
-          p
-            | 亚萨合莱自动门系统
-            br
-            | 一站式为您提供各类通行口解决方案
-          .image-wrap
-            figure(data-animation="slideToRight" data-delay="0" data-timing-function="ease-out")
-              figcaption 人行自动门解决方案
-              img(src='img/b1.png', alt='')
-            figure(data-animation="slideToRight" data-delay="100" data-timing-function="ease-out")
-              figcaption 工业门解决方案
-              img(src='img/b2.png', alt='')
-            figure(data-animation="slideToRight" data-delay="200" data-timing-function="ease-out")
-              figcaption 装卸货系统解决方案
-              img(src='img/b3.png', alt='')
-            figure(data-animation="slideToRight" data-delay="300" data-timing-function="ease-out")
-              figcaption 装卸货系统解决方案
-              img(src='img/b4.png', alt='')
-            figure(data-animation="slideToRight" data-delay="400" data-timing-function="ease-out")
-              figcaption 超大门解决方案
-              img(src='img/b5.png', alt='')
-          .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") Opening doors to bussiness and life
-        section.page4.content.page.pad15(data-id="4")
-          header.has-bg(data-animation="fadeInToBottom" data-delay="0") ASSA ABLOY Entrance Systems
-          h4.sologon
-            | 零距体验 全方展示
-            br
-            | 与您携手 开启未来
-          .banner-wrap(data-animation="fadeIn" data-delay="100")
-            span(data-animation="fadeInToTop" data-delay="200") Albany RR300Food
-            span(data-animation="fadeInToTop" data-delay="300") Besam SL500
-            span(data-animation="fadeInToTop" data-delay="400") Albany RR300 Plus
-            span(data-animation="fadeInToTop" data-delay="500") Megadoor VL3010
-            span(data-animation="fadeInToTop" data-delay="600") Crawford OH1042F-AP
-            span(data-animation="fadeInToTop" data-delay="700") Crawford OH1042P-AP
-            span(data-animation="fadeInToTop" data-delay="800") Besam Unslide
-            span(data-animation="fadeInToTop" data-delay="900") Besam SW100
-          p
-            | 亚萨合莱自动门系统
-            br
-            | 诚邀您一起
-            br
-            | 驶入通信口自动化的未来
-          .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") 2016 China Truck Tour
-        section.page4.content.page.pad15(data-id="5")
-          header.has-bg ASSA ABLOY Entrance Systems
-          h4.sologon
-            | 亚萨合莱 开遍中国
-            br
-            | 通达顺行 开启未来
-          .map-wrap
-            | ...
-          .page-label 2016 China Truck Tour
-        section.page5.content.page.pad15(data-id="6")
-          header.has-bg ASSA ABLOY Entrance Systems
-          h4.sologon
-            | 请填写以下信息完成预登记
-            br
-            | 提交后现场领取精美礼品!
-          .form-wrap
-            form(action='')
-              .input-group
-                label(for='') 姓名
-                input(type='text')
-              .input-group
-                label(for='') 联系电话
-                input(type='text')
-              .input-group
-                label(for='') 公司
-                input(type='text')
-              .input-group
-                label(for='') 职位
-                input(type='text')
-              button(type='submit') 提交
-          .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") 2016 China Truck Tour
-        section.page6.content.page.pad15(data-id="7")
-          header
-            | ASSA ABLOY Entrance Systems
-            br
-            br
-            img(src='img/icon-qr.png', alt='qr', width='30%')
-            div
-              | 恭喜您！
+        if !user
+          section.page1.content.current.page(data-id="1")
+            .bg
+              header On the road to the future
+              p CHINA TRUCK TOUR 2016
+              .icon-open.bounceIn
+                a(href='')
+                  | 开启未来 
+            .cover-wrap
+              p ASSA ABLOY Entrance Systems
+              h4 邀请函
+              p 2016 全国卡车巡展
+              hr
+              p 广东 潮汕 2016/6/24
+          section.page2.content.page.pad15(data-id="2")
+            header ASSA ABLOY Entrance Systems
+            p
+              | 亚萨合莱自动门系统 & 
               br
-              | 已预登记成功
+              | 亚萨合莱集团旗下独立事业部 
               br
-              | 凭此页面现场
+              | 旗下拥有；
               br
-              | 领取精美礼品
-          .tks-wrap(data-animation="fadeIn")
-            div
-              | 感谢您的支持! 
+              span Besam | Crawford | Albany | Megadoor
+            .image-wrap
+              figure.img-1(data-animation="fadeIn" data-delay="0")
+              figure.img-2(data-animation="fadeIn" data-delay="100")
+              figure.img-3(data-animation="fadeIn" data-delay="200")
+              figure.img-4(data-animation="fadeIn" data-delay="300")
+              figure.img-5(data-animation="fadeIn" data-delay="400")
+              figure.img-6(data-animation="fadeIn" data-delay="500")
+              figure.img-7(data-animation="fadeIn" data-delay="600")
+            p
+              | 我们致力于满足您对通行口的各类需求
               br
-              | 赶快关注亚萨合莱自动门系统
+              | 我们在中国9个城市设有办事处
               br
-              | 可现场领取精美礼品
-          footer
-            | On the road to the future
-            p CHINA TRUCK TOUR 2016
+              | 安装及服务团队覆盖全国
+            .banner-wrap
+              img(src='img/banner2.png', alt='banner', data-animation="fadeInToRight" data-delay="700")
+            .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") ASSA ABLOY Entrance Systems
+          section.page3.content.page.pad15(data-id="3")
+            header ASSA ABLOY Entrance Systems
+            p
+              | 亚萨合莱自动门系统
+              br
+              | 一站式为您提供各类通行口解决方案
+            .image-wrap
+              figure(data-animation="slideToRight" data-delay="0" data-timing-function="ease-out")
+                figcaption 人行自动门解决方案
+                img(src='img/b1.png', alt='')
+              figure(data-animation="slideToRight" data-delay="100" data-timing-function="ease-out")
+                figcaption 工业门解决方案
+                img(src='img/b2.png', alt='')
+              figure(data-animation="slideToRight" data-delay="200" data-timing-function="ease-out")
+                figcaption 装卸货系统解决方案
+                img(src='img/b3.png', alt='')
+              figure(data-animation="slideToRight" data-delay="300" data-timing-function="ease-out")
+                figcaption 装卸货系统解决方案
+                img(src='img/b4.png', alt='')
+              figure(data-animation="slideToRight" data-delay="400" data-timing-function="ease-out")
+                figcaption 超大门解决方案
+                img(src='img/b5.png', alt='')
+            .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") Opening doors to bussiness and life
+          section.page4.content.page.pad15(data-id="4")
+            header.has-bg(data-animation="fadeInToBottom" data-delay="0") ASSA ABLOY Entrance Systems
+            h4.sologon
+              | 零距体验 全方展示
+              br
+              | 与您携手 开启未来
+            .banner-wrap(data-animation="fadeIn" data-delay="100")
+              span(data-animation="fadeInToTop" data-delay="200") Albany RR300Food
+              span(data-animation="fadeInToTop" data-delay="300") Besam SL500
+              span(data-animation="fadeInToTop" data-delay="400") Albany RR300 Plus
+              span(data-animation="fadeInToTop" data-delay="500") Megadoor VL3010
+              span(data-animation="fadeInToTop" data-delay="600") Crawford OH1042F-AP
+              span(data-animation="fadeInToTop" data-delay="700") Crawford OH1042P-AP
+              span(data-animation="fadeInToTop" data-delay="800") Besam Unslide
+              span(data-animation="fadeInToTop" data-delay="900") Besam SW100
+            p
+              | 亚萨合莱自动门系统
+              br
+              | 诚邀您一起
+              br
+              | 驶入通信口自动化的未来
+            .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") 2016 China Truck Tour
+          section.page4.content.page.pad15(data-id="5")
+            header.has-bg ASSA ABLOY Entrance Systems
+            h4.sologon
+              | 亚萨合莱 开遍中国
+              br
+              | 通达顺行 开启未来
+            .map-wrap
+              | ...
+            .page-label 2016 China Truck Tour
+          section.page5.content.page.pad15(data-id="6")
+            header.has-bg ASSA ABLOY Entrance Systems
+            h4.sologon
+              | 请填写以下信息完成预登记
+              br
+              | 提交后现场领取精美礼品!
+            .form-wrap
+              form(action='')
+                .input-group
+                  label(for='') 姓名
+                  input(type='text', name="username")
+                .input-group
+                  label(for='') 联系电话
+                  input(type='text', name="mobile")
+                .input-group
+                  label(for='') 公司
+                  input(type='text', name="company")
+                .input-group
+                  label(for='') 职位
+                  input(type='text', name="duty")
+                button(type='submit') 提交
+            .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") 2016 China Truck Tour
+        else  
+          section.page6.content.page.pad15(data-id="7")
+            header
+              | ASSA ABLOY Entrance Systems
+              br
+              br
+              img(src='img/icon-qr.png', alt='qr', width='30%')
+              div
+                | 恭喜您！
+                br
+                | 已预登记成功
+                br
+                | 凭此页面现场
+                br
+                | 领取精美礼品
+            .tks-wrap(data-animation="fadeIn")
+              div
+                | 感谢您的支持! 
+                br
+                | 赶快关注亚萨合莱自动门系统
+                br
+                | 可现场领取精美礼品
+            footer
+              | On the road to the future
+              p CHINA TRUCK TOUR 2016
     script(src="js/FrozenUI_files/zepto.min.js")
     script(src="js/parallax.js")
     //- script(src="js/FrozenUI_files/effect.parallax.js")
@@ -163,6 +184,27 @@ html(lang='zh-CN')
         $('.pages').parallax({
             arrow: true,
             loading: true
+        });
+        $('button[type=submit]').on('click', function (e) {
+          var $inputs = $('form input');
+          var i = 0; len = $inputs.length;
+          var newUser = {};
+          for (; i < len; i++) {
+            if ($($inputs[i]).val() === '') {
+              alert('请填写所有表单内容');
+              return false;
+            }  
+            newUser[$($inputs[i]).attr('name')] = $($inputs[i]).val();
+          }
+
+          $.post('/user/!{openId}', newUser, function (res) {
+            if (res) {
+              alert('报名成功!');
+              location.href = location.href;
+            }
+          })
+          e.preventDefault();
+          return false;
         });
       } (Zepto);
       

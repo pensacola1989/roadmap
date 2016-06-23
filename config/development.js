@@ -15,6 +15,7 @@ module.exports = {
         'POST /user/:openid': 'Test#saveUser',
         'GET /user/:openid': 'Test#getOpenId',
         'GET /long_polling': 'Poll#index',
+        'GET /code': 'Test#code',
         'GET /notify': 'Poll#notify'
     },
     controllers: {

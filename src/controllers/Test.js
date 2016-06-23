@@ -1,3 +1,4 @@
+import OAuth from 'wechat-oauth';
 
 export class Test {
 
@@ -16,7 +17,14 @@ export class Test {
 		// res.write(this.testService.foo());
 		// res.end();
 	};
+	code (req, res, next) {
+		res.write(req.query.code);
+		res.end();
+	};
 	index (req, res, next) {
+		let client = new OAuth('wx236de42b1edcd623', '8d6c2cd8e8c3db33bc51541e1f31e09d');
+		let url = client.getAuthorizeURL('http://localhost/code', '1', 'snsapi_userinfo');
+		console.log(url);
 				// sdfsdf23423_
 		let openId = req.params.openid || 'sdfsdf23423_';
 		this.testService
