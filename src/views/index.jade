@@ -9,10 +9,21 @@ html(lang='zh-CN')
     meta(name='author', content='Rain Wu')
     meta(name='apple-mobile-web-app-capable', content='no')
     meta(name='format-detection', content='telephone=no')
-    link(rel='stylesheet', type='text/css', href='js/FrozenUI_files/parallax.css')
+    //- link(rel='stylesheet', type='text/css', href='js/FrozenUI_files/parallax.css')
+    link(rel='stylesheet', type='text/css', href='css/swiper.min.css')
     link(rel='stylesheet', type='text/css', href='css/style-index.css')
     link(rel='stylesheet', type='text/css', href='js/FrozenUI_files/parallax-animation.css')
     style.
+      html, body {
+          position: relative;
+          height: 100%;
+      }
+      div {
+        height: 100%;
+      }
+      .content .page-label {
+        height: 14px;
+      }
       .parallax-loading{
         background-color:#278ab9!important;
         background-image: url(../img/loanding.gif);
@@ -23,10 +34,10 @@ html(lang='zh-CN')
   body
     //- .mask
     //-   .icon-loading
-    .wrapper
-      .pages.vertical.default
+    .wrapper.swiper-container
+      .pages.vertical.default.swiper-wrapper
         if !user
-          section.page1.content.current.page(data-id="1")
+          div.swiper-slide.page1.content.current.page(data-id="1")
             .bg
               header On the road to the future
               p CHINA TRUCK TOUR 2016
@@ -40,7 +51,7 @@ html(lang='zh-CN')
               p 北京站 中国国际建筑科技大会及展览
               hr
               p 2016.7.4-2016.7.6
-          section.page2.content.page.pad15(data-id="2")
+          div.swiper-slide.page2.content.page.pad15(data-id="2")
             header ASSA ABLOY Entrance Systems
             p
               | 亚萨合莱自动门系统来自亚萨合莱集团 
@@ -65,7 +76,7 @@ html(lang='zh-CN')
             .banner-wrap
               img(src='img/banner2.png', alt='banner', data-animation="fadeInToRight" data-delay="1300")
             .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") ASSA ABLOY Entrance Systems
-          section.page3.content.page.pad15(data-id="3")
+          div.swiper-slide.page3.content.page.pad15(data-id="3")
             header ASSA ABLOY Entrance Systems
             p
               | 亚萨合莱自动门系统
@@ -88,7 +99,7 @@ html(lang='zh-CN')
                 figcaption 超大门解决方案
                 img(src='img/b5.png', alt='')
             .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") Opening doors to bussiness and life
-          section.page4.content.page.pad15(data-id="4")
+          div.swiper-slide.page4.content.page.pad15(data-id="4")
             header ASSA ABLOY Entrance Systems
             .img-wrap
               img(src='img/banner4-1.jpg', width='100%',data-animation="slideToLeft" data-delay="100" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
@@ -100,7 +111,7 @@ html(lang='zh-CN')
               br
               | 一站式展示旗下产品系列
             .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") 2016 China Truck Tour
-          section.page5.content.page.pad15(data-id="5")
+          div.swiper-slide.page5.content.page.pad15(data-id="5")
             header.has-bg ASSA ABLOY Entrance Systems
             .map-wrap
               | 
@@ -123,7 +134,7 @@ html(lang='zh-CN')
                 br
                 | 诚邀你一同开启通行口自动化的未来
             .page-label 2016 China Truck Tour
-          section.page5.content.page.pad15(data-id="6")
+          div.swiper-slide.page5.content.page.pad15(data-id="6")
             header.has-bg ASSA ABLOY Entrance Systems
             h4.sologon
               | 请填写以下信息开启未来之旅
@@ -147,7 +158,7 @@ html(lang='zh-CN')
                 button(type='submit') 提交
                 p 打*项为必填项
         else  
-          section.page6.content.page.pad15(data-id="7")
+          div.swiper-slide.page6.content.page.pad15(data-id="7")
             header
               | ASSA ABLOY Entrance Systems
               br
@@ -168,24 +179,90 @@ html(lang='zh-CN')
               | 2016卡车巡展 北京站
               p 我们与您相约A101展台
     script(src="js/FrozenUI_files/zepto.min.js")
-    script(src="js/parallax.js")
+    script(src="js/swiper-3.3.1.jquery.min.js")
+    //- script(src="js/parallax.js")
     //- script(src="js/FrozenUI_files/effect.parallax.js")
     script.
       !function ($) { 
-        $('.pages').parallax({
-          arrow: true,
-          loading: true,
-          onchange: function(index, element, direction) {
-            if(index==4){
-              setTimeout(function(){
-                $('.act').addClass('scaleImg');
-              },5400);
-              
-            } else{
-              $('.act').removeClass('scaleImg');
-            }
-        }
+        var mySwiper = new Swiper ('.swiper-container', {
+          direction: 'vertical',
+          onSlideChangeEnd: function (swiper) {
+            
+            var index = swiper.activeIndex;
+            var animateDom = $('[data-animation]');
+            //- $('.swiper-slide-active');
+            animShow(animateDom);
+          }
+          //- ,
+          //- loop: true,
+          
+          // 如果需要分页器
+          //- pagination: '.swiper-pagination',
+          
+          // 如果需要前进后退按钮
+          //- nextButton: '.swiper-button-next',
+          //- prevButton: '.swiper-button-prev',
+          
+          // 如果需要滚动条
+          //- scrollbar: '.swiper-scrollbar',
         });
+        mySwiper.lockSwipes();
+        $('.icon-open.bounceIn').on('click', function (e) {
+          mySwiper.unlockSwipes();
+          mySwiper.slideNext();
+        });
+        //- $('.pages').parallax({
+        //-   arrow: true,
+        //-   loading: true,
+        //-   onchange: function(index, element, direction) {
+        //-     if(index==4){
+        //-       setTimeout(function(){
+        //-         $('.act').addClass('scaleImg');
+        //-       },5400);
+              
+        //-     } else{
+        //-       $('.act').removeClass('scaleImg');
+        //-     }
+        //- }
+        //- });
+        function animShow($animateDom) {
+        $animateDom.css({
+        '-webkit-animation': 'none',
+        'display': 'none' // 解决部分 Android 机型 DOM 不自动重绘的 bug
+        });
+        $('.swiper-slide-active [data-animation]').each(function(index, element){
+        var $element    = $(element),
+        $animation  = $element.attr('data-animation'),
+        $duration   = $element.attr('data-duration') || 500,
+        $timfunc    = $element.attr('data-timing-function') || 'ease',
+        $delay      = $element.attr('data-delay') ?  $element.attr('data-delay') : 0;
+        if ($animation === 'followSlide') {
+        if (options.direction === 'horizontal' && direction === 'forward') {
+        $animation = 'followSlideToLeft';
+        }
+        else if (options.direction === 'horizontal' && direction === 'backward') {
+        $animation = 'followSlideToRight';
+        }
+        else if (options.direction === 'vertical' && direction === 'forward') {
+        $animation = 'followSlideToTop';
+        }
+        else if (options.direction === 'vertical' && direction === 'backward') {
+        $animation = 'followSlideToBottom';
+        }
+
+        }
+        $element.css({
+        'display': 'block',
+        '-webkit-animation-name': $animation,
+        '-webkit-animation-duration': $duration + 'ms',
+        '-webkit-animation-timing-function': 'ease',
+        '-webkit-animation-timing-function': $timfunc,
+        '-webkit-animation-delay': $delay + 'ms',
+        '-webkit-animation-fill-mode': 'both'
+        })
+        });
+        }
+
         $('button[type=submit]').on('click', function (e) {
           var $inputs = $('form input');
           var i = 0; len = $inputs.length;
