@@ -333,7 +333,8 @@ h4 {
 .content header {
     color: #221814;
     margin-left: -5px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    font-size: .8rem
 }
 
 .content header+p span {
@@ -365,6 +366,7 @@ h4 {
     padding: 15px 3px 15px 5px;
     bottom: 3%;
     width:80%;
+    font-size: .7rem;
 }
 
 .page1 .bg {
@@ -372,7 +374,7 @@ h4 {
     background-size: cover;
     background-position: 50%;
     width: 100%;
-    height: 70%;
+    height: 65%;
     padding-top: 30px;
     box-sizing: border-box
 }
@@ -399,14 +401,14 @@ h4 {
 }
 
 .icon-open{
-	width:40%;
-	height:30%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 115px auto 0;
-	background-color: rgba(29,138,185,.70);
-	position: relative;
+    width:40%;
+    height:30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 115px auto 0;
+    background-color: rgba(29,138,185,.70);
+    position: relative;
   -webkit-transform: scale3d(.9,.9,.9);
   transform: scale3d(.9,.9,.9);
   -webkit-animation: hue 1s infinite linear;
@@ -414,16 +416,16 @@ h4 {
   animation-duration: 1.8s;
 }
 .icon-open a{ 
-	color: #fff; 
-	font-size: 1.6rem;
-	text-decoration: none;
+    color: #fff; 
+    font-size: 1.6rem;
+    text-decoration: none;
 }
 
 
 .page1 .cover-wrap {
     background-color: #278ab9;
     color: #fff;
-    height: 30%;
+    height: 35%;
     box-sizing: border-box;
     padding: 5% 15px
 }
@@ -434,7 +436,7 @@ h4 {
     font-weight: 400
 }
 
-.page1 .cover-wrap h4+p {
+.page1 .cover-wrap p {
     text-align: center
 }
 
@@ -597,26 +599,26 @@ h4 {
 }
 
 .map-wrap{
-	position: relative;
-	margin-top: 20px;
-	overflow: hidden
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden
 }
 
 .map-wrap img{
-	position: absolute;
-	left: 0;
-	top: 0;
-	background-color:#fff;
-	width: 100%;
-	transition: all 1s cubic-bezier(.12,.73,.62,1.38);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color:#fff;
+    width: 100%;
+    transition: all 1s cubic-bezier(.12,.73,.62,1.38);
 }
 
 .map-wrap img.act{
-	position:relative!important;
-	
-	//transition: all 1s cubic-bezier(.12,.73,.62,1.38);
-	
-	transform-origin: bottom right;
+    position:relative!important;
+    
+    //transition: all 1s cubic-bezier(.12,.73,.62,1.38);
+    
+    transform-origin: right 35%;
 }
 
 .scaleImg{transform: scale(2.5)}
@@ -635,8 +637,8 @@ h4 {
 }
 
 .map-wrap span + span{
-	bottom: 0;
-	right:0;
+    bottom: 0;
+    right:0;
 }
 
 .page6 {
@@ -656,9 +658,10 @@ h4 {
 }
 
 .page6 header img+div {
-    font-size: 1.2rem;
+    font-size: 1rem;
     float: left;
-    line-height: 1.2
+    line-height: 1.2;
+    width: 55%;
 }
 
 .page6 .tks-wrap {
@@ -733,9 +736,9 @@ h4 {
 }
 
 .parallax-loading{
-	background-color:#278ab9!important;
-	background-image: url(../img/loanding.gif);
-	background-position:center;
-	background-repeat: no-repeat;
-	background-size:contain;
+    background-color:#278ab9!important;
+    background-image: url(../img/loanding.gif);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:contain;
 }
