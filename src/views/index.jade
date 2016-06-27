@@ -9,10 +9,9 @@ html(lang='zh-CN')
     meta(name='author', content='Rain Wu')
     meta(name='apple-mobile-web-app-capable', content='no')
     meta(name='format-detection', content='telephone=no')
-    //- link(rel='stylesheet', type='text/css', href='js/FrozenUI_files/parallax.css')
     link(rel='stylesheet', type='text/css', href='css/swiper.min.css')
     link(rel='stylesheet', type='text/css', href='css/style-index.css')
-    link(rel='stylesheet', type='text/css', href='js/FrozenUI_files/parallax-animation.css')
+    link(rel='stylesheet', type='text/css', href='css/animate.min.css')
     style.
       html, body {
           position: relative;
@@ -32,8 +31,6 @@ html(lang='zh-CN')
         background-size:30%;
       }
   body
-    //- .mask
-    //-   .icon-loading
     .wrapper.swiper-container
       .pages.vertical.default.swiper-wrapper
         if !user
@@ -41,9 +38,8 @@ html(lang='zh-CN')
             .bg
               header On the road to the future
               p CHINA TRUCK TOUR 2016
-              .icon-open.bounceIn
-                a(href='#2')
-                  | 开启未来 
+              a.icon-open.bounceIn(href='#2')
+                | 开启未来 
             .cover-wrap
               p(class="logo")
               h4 邀请函
@@ -60,13 +56,13 @@ html(lang='zh-CN')
               br
               span Besam | Crawford | Albany | Megadoor
             .image-wrap
-              figure.img-1(data-animation="fadeIn" data-delay="0")
-              figure.img-2(data-animation="fadeIn" data-delay="200")
-              figure.img-3(data-animation="fadeIn" data-delay="400")
-              figure.img-4(data-animation="fadeIn" data-delay="600")
-              figure.img-5(data-animation="fadeIn" data-delay="800")
-              figure.img-6(data-animation="fadeIn" data-delay="1000")
-              figure.img-7(data-animation="fadeIn" data-delay="1200")
+              figure.img-1.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s")
+              figure.img-2.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s")
+              figure.img-3.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s")
+              figure.img-4.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s")
+              figure.img-5.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s")
+              figure.img-6.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s")
+              figure.img-7.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s")
             p
               | 我们致力于满足您对通行口的各类需求
               br
@@ -74,8 +70,8 @@ html(lang='zh-CN')
               br
               | 安装及服务团队覆盖全国
             .banner-wrap
-              img(src='img/banner2.png', alt='banner', data-animation="fadeInToRight" data-delay="1300")
-            .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") ASSA ABLOY Entrance Systems
+              img.ani(src='img/banner2.png', alt='banner', swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s")
+            .page-label.ani(swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s") ASSA ABLOY Entrance Systems
           div.swiper-slide.page3.content.page.pad15(data-id="3")
             header
             p
@@ -83,57 +79,57 @@ html(lang='zh-CN')
               br
               | 一站式为您提供各类通行口解决方案
             .image-wrap
-              figure(data-animation="slideToRight" data-delay="0" data-timing-function="ease-out")
+              figure.ani(swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s")
                 figcaption 人行自动门解决方案
                 img(src='img/b1.png', alt='')
-              figure(data-animation="slideToRight" data-delay="100" data-timing-function="ease-out")
+              figure.ani(swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s")
                 figcaption 工业门解决方案
                 img(src='img/b2.png', alt='')
-              figure(data-animation="slideToRight" data-delay="200" data-timing-function="ease-out")
+              figure.ani(swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s")
                 figcaption 高性能门解决方案
                 img(src='img/b3.png', alt='')
-              figure(data-animation="slideToRight" data-delay="300" data-timing-function="ease-out")
+              figure.ani(swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s")
                 figcaption 装卸货系统解决方案
                 img(src='img/b4.png', alt='')
-              figure(data-animation="slideToRight" data-delay="400" data-timing-function="ease-out")
+              figure.ani(swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s")
                 figcaption 超大门解决方案
                 img(src='img/b5.png', alt='')
-            .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") Opening doors to bussiness and life
+            .page-label.ani(swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.8s") Opening doors to bussiness and life
           div.swiper-slide.page4.content.page.pad15(data-id="4")
             header 
             .img-wrap
-              img(src='img/banner4-1.jpg', width='100%',data-animation="slideToLeft" data-delay="100" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-              img(src='img/banner4-2.jpg', width='100%',data-animation="slideToRight" data-delay="400" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-              p
+              img.ani(src='img/banner4-1.jpg', width='100%',swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0s")
+              img.ani(src='img/banner4-2.jpg', width='100%',swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s")
+              p.ani(swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay=".5s")
                 | 2016全国卡车巡游
                 br
                 | 全国多个城市
                 br
                 | 一站式展示旗下产品系列
-            .page-label(data-animation="slideToRight" data-delay="300" data-timing-function="cubic-bezier(.12,.73,.62,1.38)") 2016 China Truck Tour
-          //- div.swiper-slide.page5.content.page.pad15(data-id="5")
-          //-   header.has-bg ASSA ABLOY Entrance Systems
-          //-   .map-wrap
-          //-     | 
-          //-     img(src='img/map1.svg',alt='',data-animation="fadeIn" data-delay="0" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     img(src='img/map2.svg',alt='',data-animation="fadeIn" data-delay="600" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     img(src='img/map3.svg',alt='',data-animation="fadeIn" data-delay="1200" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     img(src='img/map4.svg',alt='',data-animation="fadeIn" data-delay="1800" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     img(src='img/map5.svg',alt='',data-animation="fadeIn" data-delay="2400" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     img(src='img/map5-5.svg',alt='',data-animation="fadeIn" data-delay="3000" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     img(src='img/map6.svg',alt='',data-animation="fadeIn" data-delay="3600" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     img(src='img/map7.svg',alt='',data-animation="fadeIn" data-delay="4200" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     img(src='img/map8.svg',alt='',data-animation="fadeIn" data-delay="4800" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     img(class='act',src='img/map2.svg',alt='', data-animation="fadeIn" data-delay="5400" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-     span(data-animation="slideToTop" data-delay="5500" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-       | 北京
-          //-       br
-          //-       | 2016.7.4-2016.7.6
-          //-     span(data-animation="slideToLeft" data-delay="5600" data-timing-function="cubic-bezier(.12,.73,.62,1.38)")
-          //-       | 亚萨合莱自动门系统
-          //-       br
-          //-       | 诚邀你一同开启通行口自动化的未来
-          //-   .page-label 2016 China Truck Tour
+            .page-label.ani(swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1s") 2016 China Truck Tour
+          div.swiper-slide.page5.content.page.pad15(data-id="5")
+            header.has-bg
+            .map-wrap
+              | 
+              img.ani(src='img/map1.svg',alt='',swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="0s")
+              img.ani(src='img/map2.svg',alt='',swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="0.6s")
+              img.ani(src='img/map3.svg',alt='',swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="1.2s")
+              img.ani(src='img/map4.svg',alt='',swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="1.8s")
+              img.ani(src='img/map5.svg',alt='',swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="2.4s")
+              img.ani(src='img/map5-5.svg',alt='',swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="3s")
+              img.ani(src='img/map6.svg',alt='',swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="3.6s")
+              img.ani(src='img/map7.svg',alt='',swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="4.2s")
+              img.ani(src='img/map8.svg',alt='',swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="4.8s")
+              img.ani(class='act',src='img/map2.svg',alt='', swiper-animate-effect="fadeIn" swiper-animate-duration="0.5" swiper-animate-delay="5.4s")
+              span.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5" swiper-animate-delay="5.7s")
+                | 北京
+                br
+                | 2016.7.4-2016.7.6
+              span.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5" swiper-animate-delay="6s")
+                | 亚萨合莱自动门系统
+                br
+                | 诚邀你一同开启通行口自动化的未来
+            .page-label 2016 China Truck Tour
           div.swiper-slide.page5.content.page.pad15(data-id="6")
             header.has-bg 
             h4.sologon
@@ -180,6 +176,7 @@ html(lang='zh-CN')
               p 我们与您相约A101展台
     script(src="js/FrozenUI_files/zepto.min.js")
     script(src="js/swiper-3.3.1.jquery.min.js")
+    script(src="js/swiper.animate1.0.2.min.js")
     //- script(src="js/parallax.js")
     //- script(src="js/FrozenUI_files/effect.parallax.js")
     script.
@@ -192,75 +189,61 @@ html(lang='zh-CN')
             var animateDom = $('[data-animation]');
             //- $('.swiper-slide-active');
             animShow(animateDom);
-          }
-          //- ,
-          //- loop: true,
-          
-          // 如果需要分页器
-          //- pagination: '.swiper-pagination',
-          
-          // 如果需要前进后退按钮
-          //- nextButton: '.swiper-button-next',
-          //- prevButton: '.swiper-button-prev',
-          
-          // 如果需要滚动条
-          //- scrollbar: '.swiper-scrollbar',
+          },
+          onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素 
+            swiperAnimate(swiper); //初始化完成开始动画
+          }, 
+          onSlideChangeEnd: function(swiper){ 
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+            if(swiper.activeIndex == 4){
+              console.log('we');
+              setTimeout(function(){
+                  $('.act').addClass('scaleImg');
+                },5400);
+            } 
+          } 
         });
         mySwiper.lockSwipes();
         $('.icon-open.bounceIn').on('click', function (e) {
           mySwiper.unlockSwipes();
           mySwiper.slideNext();
         });
-        //- $('.pages').parallax({
-        //-   arrow: true,
-        //-   loading: true,
-        //-   onchange: function(index, element, direction) {
-        //-     if(index==4){
-        //-       setTimeout(function(){
-        //-         $('.act').addClass('scaleImg');
-        //-       },5400);
-              
-        //-     } else{
-        //-       $('.act').removeClass('scaleImg');
-        //-     }
-        //- }
-        //- });
         function animShow($animateDom) {
-        $animateDom.css({
-        '-webkit-animation': 'none',
-        'display': 'none' // 解决部分 Android 机型 DOM 不自动重绘的 bug
-        });
-        $('.swiper-slide-active [data-animation]').each(function(index, element){
-        var $element    = $(element),
-        $animation  = $element.attr('data-animation'),
-        $duration   = $element.attr('data-duration') || 500,
-        $timfunc    = $element.attr('data-timing-function') || 'ease',
-        $delay      = $element.attr('data-delay') ?  $element.attr('data-delay') : 0;
-        if ($animation === 'followSlide') {
-        if (options.direction === 'horizontal' && direction === 'forward') {
-        $animation = 'followSlideToLeft';
-        }
-        else if (options.direction === 'horizontal' && direction === 'backward') {
-        $animation = 'followSlideToRight';
-        }
-        else if (options.direction === 'vertical' && direction === 'forward') {
-        $animation = 'followSlideToTop';
-        }
-        else if (options.direction === 'vertical' && direction === 'backward') {
-        $animation = 'followSlideToBottom';
-        }
-
-        }
-        $element.css({
-        'display': 'block',
-        '-webkit-animation-name': $animation,
-        '-webkit-animation-duration': $duration + 'ms',
-        '-webkit-animation-timing-function': 'ease',
-        '-webkit-animation-timing-function': $timfunc,
-        '-webkit-animation-delay': $delay + 'ms',
-        '-webkit-animation-fill-mode': 'both'
-        })
-        });
+          $animateDom.css({
+            '-webkit-animation': 'none',
+            'display': 'none' // 解决部分 Android 机型 DOM 不自动重绘的 bug
+          });
+          $('.swiper-slide-active [data-animation]').each(function(index, element){
+            var $element    = $(element),
+            $animation  = $element.attr('data-animation'),
+            $duration   = $element.attr('data-duration') || 500,
+            $timfunc    = $element.attr('data-timing-function') || 'ease',
+            $delay      = $element.attr('data-delay') ?  $element.attr('data-delay') : 0;
+            if ($animation === 'followSlide') {
+              if (options.direction === 'horizontal' && direction === 'forward') {
+                $animation = 'followSlideToLeft';
+              }
+              else if (options.direction === 'horizontal' && direction === 'backward') {
+                $animation = 'followSlideToRight';
+              }
+              else if (options.direction === 'vertical' && direction === 'forward') {
+                $animation = 'followSlideToTop';
+              }
+              else if (options.direction === 'vertical' && direction === 'backward') {
+                $animation = 'followSlideToBottom';
+              }
+            }
+            $element.css({
+              'display': 'block',
+              '-webkit-animation-name': $animation,
+              '-webkit-animation-duration': $duration + 'ms',
+              '-webkit-animation-timing-function': 'ease',
+              '-webkit-animation-timing-function': $timfunc,
+              '-webkit-animation-delay': $delay + 'ms',
+              '-webkit-animation-fill-mode': 'both'
+            })
+          });
         }
 
         $('button[type=submit]').on('click', function (e) {

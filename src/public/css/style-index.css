@@ -311,7 +311,9 @@ h4 {
     border: none;
     height: 34px;
     width: 75%;
-    float: right
+    float: right;
+    padding: 0 10px;
+    color:#fff;
 }
 
 .form-wrap {
@@ -410,13 +412,13 @@ h4 {
     margin: 115px auto 0;
     background-color: rgba(29,138,185,.70);
     position: relative;
-  -webkit-transform: scale3d(.9,.9,.9);
-  transform: scale3d(.9,.9,.9);
-  -webkit-animation: hue 1s infinite linear;
-  -webkit-animation-duration: 1.8s;
-  animation-duration: 1.8s;
-}
-.icon-open a{ 
+
+    -webkit-transform: scale3d(.9,.9,.9);
+    transform: scale3d(.9,.9,.9);
+    -webkit-animation: hue 1s infinite linear;
+    -webkit-animation-duration: 1.8s;
+    animation-duration: 1.8s;
+
     color: #fff; 
     font-size: 1.6rem;
     text-decoration: none;
@@ -625,9 +627,6 @@ h4 {
 
 .map-wrap img.act{
     position:relative!important;
-    
-    //transition: all 1s cubic-bezier(.12,.73,.62,1.38);
-    
     transform-origin: right 35%;
 }
 
@@ -640,15 +639,15 @@ h4 {
   position: absolute;
   display: block;
   left: 13%;
-  bottom: 17%;
+  bottom: 70%;
   text-align: center;
   color: #fff;
   font-size:.7rem
 }
 
 .map-wrap span + span{
-    bottom: 0;
-    right:0;
+    bottom: 60%;
+    right: 0;
 }
 
 .page6 {
